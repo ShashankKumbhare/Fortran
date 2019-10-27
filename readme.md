@@ -271,6 +271,7 @@ end program $6conditionals
 ### <p align="center">```7-Looping```</p>  
 ```fortran
 program $7looping
+
     implicit none
     
     integer :: n=0, m=1
@@ -281,10 +282,8 @@ program $7looping
     do n=1,10,2
         print"(i1)",n
     end do
-!---------------------------------------------------------------
-    
+!---------------------------------------------------------------    
     print*, ""
-
 !---------------------------------------------------------------    
     ! Exit & Cycle
     ! Print only evens
@@ -296,19 +295,14 @@ program $7looping
         end if
         m=m+1
     end do
-!---------------------------------------------------------------    
-     
+!---------------------------------------------------------------         
     print*, ""
-
 !---------------------------------------------------------------    
     ! Continue looping while a condition is true
     do while(n/=secret_num)
         print*, "What's your guess "
         read*, n   
-    end do
-!---------------------------------------------------------------   
-  
-    
+    end do  
 end program $7looping
 ```
 ```
