@@ -3,17 +3,17 @@
 #### Content
   
 [1. First Program](#1-First-Program)  
-[2. Variable Types](#2.-Variable-Types)  
-[3. Print formatting](#3.-Print-formatting)  
-[4. Math Operators](#4.-Math-Operators)  
-[5. Math Functions](#5.-Math-Functions)  
-[6. Conditionals](#6.-Conditionals)  
+[2. Variable Types](#2-Variable-Types)  
+[3. Print formatting](#3-Print-formatting)  
+[4. Math Operators](#4-Math-Operators)  
+[5. Math Functions](#5-Math-Functions)  
+[6. Conditionals](#6-Conditionals)  
 [7. Looping](#7-Looping)  
 [](#)  
 
 
 
-### <p align="center">```1 First Program```</p>  
+### <p align="center">```1-First Program```</p>  
 ```fortran
 program first_program
     
@@ -29,7 +29,7 @@ program first_program
 end program first_program
 ```
 
-### <p align="center">```2. Variable Types```</p>  
+### <p align="center">```2-Variable Types```</p>  
 ```fortran
 program variable_type
     
@@ -61,7 +61,7 @@ program variable_type
 end program variable_type
 ```
 
-### <p align="center">```3. Print formatting```</p>  
+### <p align="center">```3-Print formatting```</p>  
 ```fortran
 program $3print
     
@@ -101,7 +101,7 @@ end program $3print
 
 ```
 
-### <p align="center">```4. Math Operators```</p>  
+### <p align="center">```4-Math Operators```</p>  
 ```fortran
 program $4math_operators
 
@@ -129,7 +129,7 @@ program $4math_operators
 end program $4math_operators
 ```
 
-### <p align="center">```5. Math Functions```</p>  
+### <p align="center">```5-Math Functions```</p>  
 ```fortran
 program $5math_functions
 
@@ -155,7 +155,7 @@ program $5math_functions
 end program $5math_functions
 ```
 
-### <p align="center">```6. Conditionals```</p>  
+### <p align="center">```6-Conditionals```</p>  
 ```fortran
 program $6conditionals
 
@@ -197,7 +197,7 @@ program $6conditionals
 end program $6conditionals
 ```
 
-### <p align="center">```7 Looping```</p>  
+### <p align="center">```7-Looping```</p>  
 ```fortran
 program $7looping
 
@@ -242,12 +242,12 @@ program $7looping
 end program $7looping
 ```
 
-### <p align="center">```8. ```</p>  
+### <p align="center">```8-```</p>  
 ```fortran
 
 ```
 
-### <p align="center">```9. ```</p>  
+### <p align="center">```9-```</p>  
 ```fortran
 
 ```
