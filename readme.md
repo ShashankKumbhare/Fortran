@@ -10,6 +10,15 @@
 [6. Conditionals](#6-Conditionals)  
 [7. Looping](#7-Looping)  
 [8. Arrays](#8-Arrays)  
+[9. Multidimentional Arrays](#8-Multidimentional-Arrays)  
+[](#)
+[](#)
+[](#)
+[](#)
+[](#)
+[](#)
+[](#)  
+
 
 
 
@@ -374,7 +383,7 @@ end program $8arrays
  1 3
 ```
 
-### <p align="center">```9-```</p>  
+### <p align="center">```9-Multidimentional Arrays```</p>  
 ```fortran
 program $9multidimentional_arrays
     implicit none
@@ -436,4 +445,85 @@ a(3,3) : 3
  3
  3
 ```
+
+### <p align="center">```10```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```11```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```12```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```13```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```14```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```15```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```15```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```16```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```17```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```18```</p>  
+```fortran
+
+```
+```
+
+```
+
 
