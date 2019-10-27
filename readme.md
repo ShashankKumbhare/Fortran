@@ -326,9 +326,6 @@ end program $7looping
  What's your guess
 7
 ```
-```
-
-```
 
 ### <p align="center">```8-Arrays```</p>  
 ```fortran
@@ -379,6 +376,64 @@ end program $8arrays
 
 ### <p align="center">```9-```</p>  
 ```fortran
+program $9multidimentional_arrays
+    implicit none
+    
+    integer :: n, m
+    ! Create multidimensional array (Matrix)
+    integer, dimension(3,3) :: a4
+!------------------------------------------------------------------------
+    ! Assign values to a multidimensional array
+    do n=1,3
+        do m=1,3
+            a4(n,m)=n
+        end do
+    end do
+    do n=1,3
+        do m=1,3
+            print"(a2,i1,a1,i1,a4,i1)", "a(", n, ",", m, ") : ", a4(n,m)
+        end do
+    end do       
+!------------------------------------------------------------------------  
+    print*, ""
+!------------------------------------------------------------------------  
+    ! Use an implied do loop to print each row
+    ! on one line
+    do n=1,3
+        print "(3i1)", (a4(n,m), m=1,3)
+    end do
+!------------------------------------------------------------------------
+    print*, ""
+!------------------------------------------------------------------------ 
+    ! Get size
+    print"(i2)", size(a4)
+    
+    ! Number of dimensions
+    print "(i2)", Rank(a4)
+  
+    ! Elements in each dimension
+    print "(i2)", shape(a4)
+    
+end program $9multidimentional_arrays
+```
+```
+a(1,1) : 1
+a(1,2) : 1
+a(1,3) : 1
+a(2,1) : 2
+a(2,2) : 2
+a(2,3) : 2
+a(3,1) : 3
+a(3,2) : 3
+a(3,3) : 3
 
+111
+222
+333
+
+ 9
+ 2
+ 3
+ 3
 ```
 
