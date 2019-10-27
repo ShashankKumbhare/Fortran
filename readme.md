@@ -28,6 +28,11 @@ program first_program
       
 end program first_program
 ```
+```
+ What's your name?
+Shashank Kumbhare
+ Hello Shashank Kumbhare
+```
 
 ### <p align="center">```2-Variable Types```</p>  
 ```fortran
@@ -59,6 +64,17 @@ program variable_type
         !    ^ (a4,i1):(<a for string><no. of spaces aside>,<i for integer><no. of spaces aside>)    
     
 end program variable_type
+```
+```
+ Biggest Real  3.4028235E+38
+ Biggest Int  2147483647
+ Smallest Real  1.1754944E-38
+ Int            4
+ Real            4
+ Double            8
+ Logical            4
+ Character            1
+October   0
 ```
 
 ### <p align="center">```3-Print formatting```</p>  
@@ -97,8 +113,34 @@ program $3print
     print"(/,a,a)", "A number ", adjustl("10")    ! adjustl("char"): left adjustment   
       
 end program $3print
+```
+```
+ A number           10          15         100
 
+    7    6    8
 
+    7
+    6
+    8
+
+    7
+    6
+    8
+
+  7  6
+  8
+
+           7           6           8
+
+ 3.14150 1.12340
+
+    Name     Age
+
+0.1234E+020.1235E+03
+
+I am 43
+
+A number 10
 ```
 
 ### <p align="center">```4-Math Operators```</p>  
@@ -128,6 +170,16 @@ program $4math_operators
     
 end program $4math_operators
 ```
+```
+   5+4= 9
+   5-4= 1
+   5*4= 20
+   5%4= 1
+  5**4= 625
+2.222222328186035
+2.222222222222222
+ 1
+```
 
 ### <p align="center">```5-Math Functions```</p>  
 ```fortran
@@ -153,6 +205,23 @@ program $5math_functions
     print "(a10,f5.3)", "ATAN(0) = ", ATAN(0.0)
     
 end program $5math_functions
+```
+```
+ABS(-1) = 1
+SQRT(81) = 9.0
+EXP(1) = 2.71828
+LOG(2.71) = 0.99695
+INT(2.71) = 2
+NINT(2.71) = 3
+FLOOR(2.71) = 2
+MAX(2.7,3.4) = 3.4
+MIN(2.7,3.4) = 2.7
+SIN(1.5708) = 1.0
+COS(1.5708) = -.000
+TAN(1.5708) = -276243.84375
+ASIN(0) = 0.000
+ACOS(0) = 1.571
+ATAN(0) = 0.000
 ```
 
 ### <p align="center">```6-Conditionals```</p>  
@@ -195,6 +264,14 @@ program $6conditionals
     end select
     
 end program $6conditionals
+```
+```
+ Middle School
+ T
+ F
+ T
+ T
+ Middle School
 ```
 
 ### <p align="center">```7-Looping```</p>  
@@ -240,6 +317,30 @@ program $7looping
   
     
 end program $7looping
+```
+```
+1
+3
+5
+7
+9
+
+2
+4
+6
+8
+
+ What's your guess
+5
+ What's your guess
+1
+ What's your guess
+9
+ What's your guess
+7
+```
+```
+
 ```
 
 ### <p align="center">```8-```</p>  
