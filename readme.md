@@ -1,6 +1,7 @@
 ### ```First Program```
 ###<p align="center">```First Program```</p> 
-```fortran
+
+```foran
 program first_program
     
     implicit none ! treats all variables that start with the letters i, j, k, l, m and n as integers and all other variables as real arguments
