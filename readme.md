@@ -10,8 +10,8 @@
 [6. Conditionals](#6-Conditionals)  
 [7. Looping](#7-Looping)  
 [8. Arrays](#8-Arrays)  
-[9. Multidimentional Arrays](#8-Multidimentional-Arrays)  
-[](#)
+[9. Multidimentional Arrays](#9-Multidimentional-Arrays)  
+[10. Runtime Arrays](#10-Runtime-Arrays)
 [](#)
 [](#)
 [](#)
@@ -446,12 +446,73 @@ a(3,3) : 3
  3
 ```
 
-### <p align="center">```10```</p>  
+### <p align="center">```10-Runtime Arrays```</p>  
 ```fortran
-
+program $10runtime_arrays
+    implicit none
+    
+    integer :: n, m, x, y
+    integer, dimension(1:5) :: a1,a2
+    integer, dimension(1:9) :: a6=(/1,2,3,4,5,6,7,8,9/)
+    integer, dimension(1:3,1:3) :: a7
+    ! Define an array thats size is determined at run time
+    integer, dimension(:), allocatable :: a5
+    integer :: num_vals = 0    
+!-------------------------------------------------------------    
+    ! Define array size at run time
+    print*, "Enter size of array: "
+    read*, num_vals
+    allocate(a5(1:num_vals))
+    do n=1,num_vals
+        a5(n)=n
+    end do   
+    print"(a4,50i2)","a5= ", (a5(n), n=1,num_vals)
+!-------------------------------------------------------------        
+    ! Change all values in array
+    a1=(/1,2,3,6,7/)
+    a2=(/0,2,4,6,8/)
+    print"(a4,5i2,/,a4,5i2)","a1= ", (a1(m), m=1,5), "a2= ", (a2(m), m=1,5) 
+!-------------------------------------------------------------        
+    ! Reshape the ARRAY from 1x9 t0 3x3
+    a7 = reshape(a6,(/3,3/))
+    print*, "a7="
+    do n=1,3
+        print"(3i2)", (a7(n,m), m=1,3)
+    end do
+!-------------------------------------------------------------        
+    ! Check if values are equal across
+    ! the 1 dimension
+    print "(l1)", all(a1==a2, 1)
+    ! Are any equal?
+    print "(l1)", any(a1==a2, 1)
+    ! How many are equal
+    print "(i1)", count(a1==a2, 1)
+    ! Get min and max value
+    print "(i1)", maxval(a1)
+    print "(i1)", minval(a1)
+    ! Get product and sum
+    print "(i3)", product(a1)
+    print "(i2)", sum(a1)   
+    
+end program $10runtime_arrays
 ```
 ```
-
+ Enter size of array:
+8
+a5=  1 2 3 4 5 6 7 8
+a1=  1 2 3 6 7
+a2=  0 2 4 6 8
+ a7=
+ 1 4 7
+ 2 5 8
+ 3 6 9
+F
+T
+2
+7
+1
+252
+19
 ```
 
 ### <p align="center">```11```</p>  
