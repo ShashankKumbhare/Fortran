@@ -9,7 +9,7 @@
 [5. Math Functions](#5-Math-Functions)  
 [6. Conditionals](#6-Conditionals)  
 [7. Looping](#7-Looping)  
-[](#)  
+[8. Arrays](#8-Arrays)  
 
 
 
@@ -336,7 +336,7 @@ end program $7looping
 
 ```
 
-### <p align="center">```8-```</p>  
+### <p align="center">```8-Arrays```</p>  
 ```fortran
 program $8arrays
     implicit none
