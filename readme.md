@@ -9,7 +9,7 @@
 [5. Math Functions](#5.-Math-Functions)  
 [6. Conditionals](#6.-Conditionals)  
 [7. Looping](#7.-Looping)  
-[2. Variable Types](#2.-Variable-Types)  
+[](#)  
 
 
 ### <p align="center">```1. First Program```</p>  
