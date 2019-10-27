@@ -15,8 +15,7 @@
 
 ### <p align="center">```1-First Program```</p>  
 ```fortran
-program first_program
-    
+program first_program   
     implicit none ! treats all variables that start with the letters i, j, k, l, m and n as integers and all other variables as real arguments
 
     character* 20::name
@@ -37,7 +36,6 @@ Shashank Kumbhare
 ### <p align="center">```2-Variable Types```</p>  
 ```fortran
 program variable_type
-    
     implicit none
     
     real,parameter :: PI=3.1415    ! parameter: it say's that the variable is a constant
@@ -79,8 +77,7 @@ October   0
 
 ### <p align="center">```3-Print formatting```</p>  
 ```fortran
-program $3print
-    
+program $3print    
     implicit none
     
     ! numbers are right justified by default
@@ -146,7 +143,6 @@ A number 10
 ### <p align="center">```4-Math Operators```</p>  
 ```fortran
 program $4math_operators
-
     implicit none
     
     real :: float_num = 1.111111111111111
@@ -184,7 +180,6 @@ end program $4math_operators
 ### <p align="center">```5-Math Functions```</p>  
 ```fortran
 program $5math_functions
-
     implicit none
     
     print "(a10,i1)", "ABS(-1) = ", ABS(-1)
@@ -227,7 +222,6 @@ ATAN(0) = 0.000
 ### <p align="center">```6-Conditionals```</p>  
 ```fortran
 program $6conditionals
-
     implicit none
 
     ! Relational Operators : == /= > < >= <=
@@ -277,7 +271,6 @@ end program $6conditionals
 ### <p align="center">```7-Looping```</p>  
 ```fortran
 program $7looping
-
     implicit none
     
     integer :: n=0, m=1
@@ -345,7 +338,54 @@ end program $7looping
 
 ### <p align="center">```8-```</p>  
 ```fortran
+program $8arrays
+    implicit none
+    
+    ! Create ARRAY
+    integer, dimension(1:5) :: a1, a2, a3
+    real, dimension(1:50) :: aR1
+    ! Create multidimensional array (Matrix)
+    integer, dimension(5,5) :: a4
+    integer :: n, m, x, y
+ 
+    ! Define an array thats size is determined at run time
+    integer, dimension(:), allocatable :: a5
+    integer :: num_vals=0
+  
+    integer, dimension(1:9) :: a6 = (/ 1,2,3,4,5,6,7,8,9 /)
+    integer, dimension(1:3,1:3) :: a7
+  
+    ! Assign values (Starts at index 1)
+    a1(1) = 5
+    ! Retrieve value
+    print"(i1,/)", a1(1)
+    
+    ! Assign values with a loop
+    do n=1,5
+        a1(n)=n
+        print"(i1)", a1(n)
+    end do    
+    
+    ! Get a range
+    print"(/,3i2)", a1(1:3)
+    
+    ! Get a range with an increment
+    print"(/,2i2)", a1(1:3:2)
+    
+end program $8arrays
+```
+```
+5
 
+1
+2
+3
+4
+5
+
+ 1 2 3
+
+ 1 3
 ```
 
 ### <p align="center">```9-```</p>  
