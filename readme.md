@@ -2,7 +2,7 @@
 
 #### Content
   
-[1. First Program](#1.-First-Program)  
+[1. First Program](#1-First-Program)  
 [2. Variable Types](#2.-Variable-Types)  
 [3. Print formatting](#3.-Print-formatting)  
 [4. Math Operators](#4.-Math-Operators)  
@@ -252,4 +252,4 @@ end program $7looping
 
 ```
 
-## 1. First Program
+## 1 First Program
