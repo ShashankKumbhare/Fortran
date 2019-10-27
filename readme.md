@@ -8,12 +8,12 @@
 [4. Math Operators](#4.-Math-Operators)  
 [5. Math Functions](#5.-Math-Functions)  
 [6. Conditionals](#6.-Conditionals)  
-[7. Looping](#7.-Looping)  
+[7. Looping](#7-Looping)  
 [](#)  
 
 
 
-### <p align="center">```1. Firasdsadst Program```</p>  
+### <p align="center">```1 First Program```</p>  
 ```fortran
 program first_program
     
@@ -197,7 +197,7 @@ program $6conditionals
 end program $6conditionals
 ```
 
-### <p align="center">```7. Looping```</p>  
+### <p align="center">```7 Looping```</p>  
 ```fortran
 program $7looping
 
@@ -252,4 +252,3 @@ end program $7looping
 
 ```
 
-## 1 First Program
