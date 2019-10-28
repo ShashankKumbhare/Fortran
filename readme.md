@@ -17,7 +17,7 @@
 [13. Structures](#13-Structures)  
 [14. Functions](#14-Functions)  
 [15. Recursive Functions](#15-Recursive-Functions)  
-[](#)  
+[16. Subroutines](#16-Subroutines)  
 
 
 
@@ -718,23 +718,42 @@ end program $15recursive_functions
 Factorial(4) =  24
 ```
 
-### <p align="center">```15```</p>  
+### <p align="center">```16-Subroutines```</p>  
 ```fortran
-
+program $16subroutines
+    implicit none
+ 
+    integer :: i=1, p1, p2, p3
+    call plus_three(i, p1, p2, p3)
+    print "(i2,/,i2,/,i2)", i, p1, p2
+ 
+    contains
+        ! Subroutines can return multiple values
+        subroutine plus_three(n, plus1, plus2, plus3)
+            integer, intent(in) :: n
+            integer, intent(out) :: plus1, plus2, plus3 ! Output
+            plus1=n+1
+            plus2=n+2
+            plus3=n+3
+        end subroutine plus_three
+        
+end program $16subroutines
 ```
 ```
-
-```
-
-### <p align="center">```16```</p>  
-```fortran
-
-```
-```
-
+ 1
+ 2
+ 3
 ```
 
 ### <p align="center">```17```</p>  
+```fortran
+
+```
+```
+
+```
+
+### <p align="center">```18```</p>  
 ```fortran
 
 ```
