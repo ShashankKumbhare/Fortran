@@ -763,7 +763,7 @@ program $17modules
 
 end program $17modules
 ```
-##### ```.f90 file for main code```
+##### ```.f90 file for module```
 ```fortran
 module mult_mod
     implicit none
