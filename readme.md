@@ -639,10 +639,56 @@ Tom May      42 229.780
 
 ### <p align="center">```14```</p>  
 ```fortran
-
+program $14functions
+    implicit none
+    
+    integer :: ans
+    
+    ans=get_sum(9,4)
+    print"(a8,i2)", "9 + 4 = ", ans
+    print"(a8,i2)", "9 - 4 = ", get_diff(9,4)
+    print"(a8,i2)", "9 + 0 = ", get_sum2(9)
+    print"(a8,i2)", "9 + 4 = ", get_sum2(9,4)
+    
+!-----------------------------------------------------------------------------------------------------            
+    ! Defines area for functions
+    contains
+        ! function, name, arguments
+        function get_sum(n1,n2) result(sum)
+            implicit none
+            integer :: n1, n2, sum
+            sum=n1+n2       ! The last value defined is returned    
+        end function get_sum    
+!-----------------------------------------------------------------------------------------------------    
+        ! intent(in): Don't allow variable values to change
+        function get_diff(n1,n2) result(diff)
+            implicit none  
+            integer, intent(in) :: n1, n2       ! intent(in): Don't allow variable values to change
+            integer :: diff
+            diff=n1-n2
+        end function get_diff
+!-----------------------------------------------------------------------------------------------------        
+        ! Block functions from changing input variables with pure
+        pure function get_sum2(n1,n2) result(sum)
+            implicit none
+            integer, intent(in) :: n1        
+            integer, intent(in), optional :: n2     ! optional: Arguments don't need to have a value passed
+            integer :: sum
+            
+            if(present(n2)) then
+                sum=n1+n2
+            else
+                sum=n1
+            end if
+        end function get_sum2
+!-----------------------------------------------------------------------------------------------------                
+end program $14functions
 ```
 ```
-
+9 + 4 = 13
+9 - 4 =  5
+9 + 0 =  9
+9 + 4 = 13
 ```
 
 ### <p align="center">```15```</p>  
