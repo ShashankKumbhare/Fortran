@@ -694,10 +694,28 @@ end program $14functions
 
 ### <p align="center">```15```</p>  
 ```fortran
+program $15recursive_functions
+    implicit none
 
+    integer :: ans
+    
+    ans = factorial(4)
+    print "(a15,i3)", "Factorial(4) = ", ans
+    
+    contains
+        ! Recursive functions call themselves and must be labeled as such in Fortran
+        recursive function factorial(n) result(fact)
+            integer :: n, fact
+            if (n==1) then
+                fact=1
+            else
+                fact=n*factorial(n-1)
+            end if
+        end function
+end program $15recursive_functions
 ```
 ```
-
+Factorial(4) =  24
 ```
 
 ### <p align="center">```15```</p>  
