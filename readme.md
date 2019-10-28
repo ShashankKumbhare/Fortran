@@ -765,7 +765,7 @@ program $17modules
 end program $17modules
 ```
 
-```<p align="center">.f90 file for module</p>```  
+<p align="center">```.f90 file for module```</p>  
 
 ```fortran
 module mult_mod
