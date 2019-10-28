@@ -18,6 +18,11 @@
 [14. Functions](#14-Functions)  
 [15. Recursive Functions](#15-Recursive-Functions)  
 [16. Subroutines](#16-Subroutines)  
+[16. Subroutines](#16-Subroutines)  
+[17. Modules](#17-Modules)  
+[](#)  
+
+
 
 
 
@@ -745,12 +750,46 @@ end program $16subroutines
  3
 ```
 
-### <p align="center">```17```</p>  
+### <p align="center">```17-Modules```</p>  
 ```fortran
+program $17modules
+    use mult_mod    ! Import module like this
+    implicit none
+    
+    print"(a8,i3)", "4 x 5 = ", mult(4,5)
+    print"(a12,f6.3)", "4.3 x 5.2 = ", mult(4.3,5.2)
 
+end program $17modules
+```
+```fortran
+module mult_mod
+    implicit none
+    private
+    public :: mult
+ 
+    ! We can define the 2 functions we will associate with the mult function depending on the input data types
+    interface mult
+        procedure mult_real, mult_int
+    end interface mult
+ 
+    contains
+        function mult_real(n1,n2) result(product)
+            real, intent(in) :: n1, n2
+            real :: product
+            product=n1*n2
+        end function mult_real
+ 
+        function mult_int(n1,n2) result(product)
+            integer, intent(in) :: n1, n2
+            integer :: product
+            product=n1*n2
+        end function mult_int
+    
+end module mult_mod
 ```
 ```
-
+4 x 5 =  20
+4.3 x 5.2 = 22.360
 ```
 
 ### <p align="center">```18```</p>  
