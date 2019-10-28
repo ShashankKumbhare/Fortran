@@ -14,7 +14,7 @@
 [10. Runtime Arrays](#10-Runtime-Arrays)  
 [11. Format](#11-Format)  
 [12. Strings](#12-Strings)  
-[](#)  
+[13. Structures](#13-Structures)  
 [](#)  
 [](#)  
 [](#)  
@@ -599,12 +599,42 @@ Index at 7
 30
 ```
 
-### <p align="center">```13```</p>  
+### <p align="center">```13-Structures```</p>  
 ```fortran
-
+program $13structures
+    implicit none
+    
+    ! You can define custom types which contain multiple values of different types
+    type Customer
+        character (len = 40) :: name
+        integer :: age
+        real :: balance
+    end type Customer
+  
+    type(Customer), dimension(5) :: customers  
+    integer :: n
+    ! Create a customer
+    type(Customer) :: cust1
+  
+    ! Assign values
+    cust1%name="Sally Smith"
+    cust1%age=34
+    cust1%balance=320.45
+    ! Assign structure to array
+    customers(1) = cust1  
+    ! Assign values independently
+    customers(2)%name = "Tom May"
+    customers(2)%age = 42
+    customers(2)%balance = 229.78
+  
+    do n = 1, 2
+        print"(a12,i3,f8.3)", customers(n)
+    end do   
+end program $13structures
 ```
 ```
-
+Sally Smith  34 320.450
+Tom May      42 229.780
 ```
 
 ### <p align="center">```14```</p>  
