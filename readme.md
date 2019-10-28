@@ -653,6 +653,7 @@ program $14functions
 !-----------------------------------------------------------------------------------------------------            
     ! Defines area for functions
     contains
+!-----------------------------------------------------------------------------------------------------     	
         ! function, name, arguments
         function get_sum(n1,n2) result(sum)
             implicit none
