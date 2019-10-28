@@ -13,7 +13,7 @@
 [9. Multidimentional Arrays](#9-Multidimentional-Arrays)  
 [10. Runtime Arrays](#10-Runtime-Arrays)  
 [11. Format](#11-Format)  
-[](#)  
+[12. Strings](#12-Strings)  
 [](#)  
 [](#)  
 [](#)  
@@ -569,7 +569,7 @@ Cups Liters Quarts
   10  2.360  2.080
 ```
 
-### <p align="center">```12```</p>  
+### <p align="center">```12-Strings```</p>  
 ```fortran
 program $12strings
     implicit none
