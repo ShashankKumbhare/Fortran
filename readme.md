@@ -12,7 +12,7 @@
 [8. Arrays](#8-Arrays)  
 [9. Multidimentional Arrays](#9-Multidimentional-Arrays)  
 [10. Runtime Arrays](#10-Runtime-Arrays)
-[](#)
+[11. Format](#11-Format)
 [](#)
 [](#)
 [](#)
@@ -515,12 +515,58 @@ T
 19
 ```
 
-### <p align="center">```11```</p>  
+### <p align="center">```11-Format```</p>  
 ```fortran
-
+program $11format
+    implicit none
+    
+    integer :: num
+    integer :: cups
+    real :: liters
+    real :: quarts
+    
+    ! Print values (1 to 12) * 7
+    do num = 1,12
+        print 100, num,num*7
+        ! The format statement has a numbered label. You pass values to it that will fit into the designated formatting
+        ! I designates an integer along with total space with values right justified
+        100 format(i2,' * 7 = ',i3)
+    end do
+    print "(/a18)", "Cups Liters Quarts"
+    do cups = 1, 10
+        liters=cups*0.236
+        quarts=cups*0.208
+        print 200, cups,liters,quarts
+        ! x defines spaces f is for floats
+        200 format(' ',i3, 2x, f5.3, 2x, f5.3)
+    end do
+end program $11format
 ```
 ```
+ 1 * 7 =   7
+ 2 * 7 =  14
+ 3 * 7 =  21
+ 4 * 7 =  28
+ 5 * 7 =  35
+ 6 * 7 =  42
+ 7 * 7 =  49
+ 8 * 7 =  56
+ 9 * 7 =  63
+10 * 7 =  70
+11 * 7 =  77
+12 * 7 =  84
 
+Cups Liters Quarts
+   1  0.236  0.208
+   2  0.472  0.416
+   3  0.708  0.624
+   4  0.944  0.832
+   5  1.180  1.040
+   6  1.416  1.248
+   7  1.652  1.456
+   8  1.888  1.664
+   9  2.124  1.872
+  10  2.360  2.080
 ```
 
 ### <p align="center">```12```</p>  
