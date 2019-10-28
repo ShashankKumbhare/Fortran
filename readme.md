@@ -15,7 +15,7 @@
 [11. Format](#11-Format)  
 [12. Strings](#12-Strings)  
 [13. Structures](#13-Structures)  
-[](#)  
+[14. Functions](#14-Functions)  
 [](#)  
 [](#)  
 
@@ -637,7 +637,7 @@ Sally Smith  34 320.450
 Tom May      42 229.780
 ```
 
-### <p align="center">```14```</p>  
+### <p align="center">```14-Functions```</p>  
 ```fortran
 program $14functions
     implicit none
@@ -722,13 +722,3 @@ end program $14functions
 ```
 
 ```
-
-### <p align="center">```18```</p>  
-```fortran
-
-```
-```
-
-```
-
-
