@@ -751,7 +751,9 @@ end program $16subroutines
 ```
 
 ### <p align="center">```17-Modules```</p>  
-You have to make one more .f90 file for module
+- You have to make one more .f90 file for module.
+- Compile them separately and run the main .f90 file.
+
 ##### ```.f90 file for main code```
 ```fortran
 program $17modules
