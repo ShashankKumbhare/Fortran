@@ -11,12 +11,12 @@
 [7. Looping](#7-Looping)  
 [8. Arrays](#8-Arrays)  
 [9. Multidimentional Arrays](#9-Multidimentional-Arrays)  
-[10. Runtime Arrays](#10-Runtime-Arrays)
-[11. Format](#11-Format)
-[](#)
-[](#)
-[](#)
-[](#)
+[10. Runtime Arrays](#10-Runtime-Arrays)  
+[11. Format](#11-Format)  
+[](#)  
+[](#)  
+[](#)  
+[](#)  
 [](#)  
 
 
