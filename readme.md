@@ -725,7 +725,7 @@ program $16subroutines
  
     integer :: i=1, p1, p2, p3
     call plus_three(i, p1, p2, p3)
-    print "(i2,/,i2,/,i2)", i, p1, p2
+    print"(i2,/,i2,/,i2)", i, p1, p2
  
     contains
         ! Subroutines can return multiple values
