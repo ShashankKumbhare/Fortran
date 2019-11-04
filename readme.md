@@ -22,6 +22,7 @@
 [18. Submodules](#18-Submodules)  
 [19. Pointers](#19-Pointers)  
 [20. OOP](#20-OOP)  
+[21. Objects in Fortran](21-Objects-in-Fortran)
 
 ### <p align="center">```1-First Program```</p>  
 ```fortran
@@ -893,3 +894,85 @@ ptr2:3    tar1:3
 
 ### <p align="center">```20-OOP```</p>  
 https://en.wikibooks.org/wiki/Fortran/OOP_in_Fortran#Submodule
+
+### <p align="center">```21-Objects in Fortran```</p>  
+```fortran
+!  $20Objects_in_Fortran.f90 
+module vehicle_module
+    implicit none
+    type, public :: vehicle
+        character(len=15) :: vehicle_type = "Not specified"
+        character(len=15) :: no_of_seats = "Not specified"
+        integer :: max_speed = 0
+    contains
+        procedure :: milage
+    end type
+contains
+    function milage(this) result(milage_value)
+        class(vehicle) :: this
+        real :: milage_value
+        milage_value = this%max_speed/50
+    end function
+end module
+!------------------------------------------------------------------------------------
+module car_module
+    use vehicle_module
+    implicit none    
+    type, extends(vehicle), public :: car
+        character(len=15) :: car_model = "Not specified"
+        character(len=15) :: car_color = "Not specified"        
+    contains
+        procedure :: price
+    end type
+contains
+    function price(this) result(price_value)
+        class(car) :: this
+        real :: price_value
+        if (this%car_color=="bed") then
+            price_value = 100000
+        else if (this%car_color=="breen") then
+            price_value = 200000
+        else if (this%car_color=="blue") then
+            price_value = 300000
+        else 
+            price_value = 0
+        end if
+    end function
+end module
+!------------------------------------------------------------------------------------- 
+Program $20Objects_in_Fortran
+    use vehicle_module
+    use car_module
+    implicit none
+    
+    type(vehicle) :: my_vehicle = vehicle("Car","2",250)
+    type(car) :: my_car = car("Car","2",250,"Ferrari","blue")
+    
+    print*, "Your Vehicle:"
+    print*, "Your vehicle type: ", my_vehicle%vehicle_type
+    print*, "Your vehicle's no. of seats: ", my_vehicle%no_of_seats
+    print*, "Your vehicle's max speed: ", my_vehicle%max_speed, " miles/hour" 
+    print*, "Your vehicle's milage", my_vehicle%milage(), "miles per litre"
+    print*, ""
+    print*, "Your Car:"
+    print*, "Your car's vehicle type name: ", my_car%vehicle_type
+    print*, "Your car's no. of seats: ", my_car%no_of_seats
+    print*, "Your car's model name: ", my_car%car_model
+    print*, "Your car's model color: ", my_car%car_color
+    print*, "Your car's model price: ", my_car%price(), "$"
+end program $20Objects_in_Fortran
+```
+```
+ Your Vehicle:
+ Your vehicle type: Car
+ Your vehicle's no. of seats: 2
+ Your vehicle's max speed:          250  miles/hour
+ Your vehicle's milage   5.000000     miles per litre
+
+ Your Car:
+ Your car's vehicle type name: Car
+ Your car's no. of seats: 2
+ Your car's model name: Ferrari
+ Your car's model color: blue
+ Your car's model price:    300000.0     $
+```
