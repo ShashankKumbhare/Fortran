@@ -928,7 +928,7 @@ contains
     function price(this) result(price_value)
         class(car) :: this
         real :: price_value
-        if (this%car_color=="bed") then
+        if (this%car_color=="red") then
             price_value = 100000
         else if (this%car_color=="breen") then
             price_value = 200000
@@ -948,13 +948,13 @@ Program $20Objects_in_Fortran
     type(vehicle) :: my_vehicle = vehicle("Car","2",250)
     type(car) :: my_car = car("Car","2",250,"Ferrari","blue")
     
-    print*, "Your Vehicle:"
+    print*, "About your Vehicle:"
     print*, "Your vehicle type: ", my_vehicle%vehicle_type
     print*, "Your vehicle's no. of seats: ", my_vehicle%no_of_seats
     print*, "Your vehicle's max speed: ", my_vehicle%max_speed, " miles/hour" 
     print*, "Your vehicle's milage", my_vehicle%milage(), "miles per litre"
     print*, ""
-    print*, "Your Car:"
+    print*, "About your Car:"
     print*, "Your car's vehicle type name: ", my_car%vehicle_type
     print*, "Your car's no. of seats: ", my_car%no_of_seats
     print*, "Your car's model name: ", my_car%car_model
@@ -976,3 +976,49 @@ end program $20Objects_in_Fortran
  Your car's model color: blue
  Your car's model price:    300000.0     $
 ```
+Another Exmaple
+```fortran
+module class_Circle
+    implicit none
+    private
+    public :: Circle, circle_area, circle_print
+    real :: pi = 3.1415926535897931d0       ! Class-wide private constant
+    type Circle
+        real :: radius
+    end type Circle
+contains
+    function circle_area(this) result(area)
+        type(Circle), intent(in) :: this
+        real :: area
+        area = pi * this%radius**2
+    end function circle_area
+    
+    subroutine circle_print(this)
+        type(Circle), intent(in) :: this
+        real :: area
+        area = circle_area(this)            ! Call the circle_area function
+        print *, 'Circle: r = ', this%radius, ' area = ', area
+    end subroutine circle_print
+end module class_Circle
+!----------------------------------------------------------------------------------------------
+program circle_test
+    use class_Circle
+    implicit none
+    
+    type(Circle) :: c                       ! Declare a variable of type Circle.
+    c = Circle(1.5)                         ! Use the implicit constructor, radius = 1.5.
+    call circle_print(c)                    ! Call a class subroutine
+end program circle_test
+```
+```
+ Circle: r =    1.500000      area =    7.068583
+```
+
+
+
+
+
+
+
+
+
