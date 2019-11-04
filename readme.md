@@ -846,7 +846,7 @@ contains
 end submodule points_a
 ```
 The repetition in the above example can be avoided by using an alternative declaration. The following example shows that it is not necessary to restate the properties of the point_dist interface.  
-```
+```fortran
 submodule (points) points_a
 contains
   module procedure point_dist
