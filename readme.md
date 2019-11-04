@@ -18,9 +18,9 @@
 [14. Functions](#14-Functions)  
 [15. Recursive Functions](#15-Recursive-Functions)  
 [16. Subroutines](#16-Subroutines)  
-[16. Subroutines](#16-Subroutines)  
 [17. Modules](#17-Modules)  
-[18. Pointers](#18-Pointers)  
+[18. Submodules](#18-Submodules)  
+[19. Pointers](#19-Pointers)  
 
 
 
@@ -797,9 +797,67 @@ end module mult_mod
 4.3 x 5.2 = 22.360
 ```
 
-### <p align="center">```18-Pointers```</p>  
+### <p align="center">```18-Submodules```</p>  
+Submodules are a feature of Fortran 2008 which allow a module procedure to have its interface defined in a module while having the body of the procedure defined in a separate unit, a submodule.  
+  
+Submodules were originally introduced as an extension to Fortran 2003 and were later adopted as part of the Fortran 2008 standard. For further details, see the following technical report: ISO/IEC TR 19767:2005 Fortran - Enhanced Module Facilities.  
+  
+The module-submodule structure is hierarchical - in that a submodule can itself be further extended by other “descendant” submodules.  
+  
+Why?  
+Splitting a module into submodules may allow a programmer to reduce the source code size of the module proper.  
+  
+Before submodules, this could only be done by moving code into other modules or into external procedures.  
+  
+However, this moving of code was not always possible given the way the public/private attributes in Fortran work. Other modules and external procedure cannot access the private entities and components of a module - if the code to be moved accessed such an entity or component, then either the move was not possible or the private attribute needed to be removed, contrary to the original “information hiding” design of the program.  
+  
+Entities in a submodule have access to the all entities and components of their ancestor module and any ancestor submodules by host association, just as if they were physically present inside the source code of their ancestors.   
+  
+Depending on the Fortran processor in use, splitting a module into submodules may also reduce the time it takes to compile the entire program, by avoiding so called compilation cascades.  
+  
+Ordinarily, changes to source code in the body of a module procedure require recompilation of the module hosting the procedure. For most build systems recompilation of a module then triggers recompilation of all program units that use that module, even if there has been no change in the things that the module “provides” to the program units that use it. When the recompiled program units are themselves modules, a cascade results.  
+  
+If the body of the procedure is moved into a submodule, then any subsequent changes to the body will typically only require recompilation of the submodule and its descendants. The information in the source code of a submodule is typically not used to compile its ancestors or any program units that may use its ancestor module.  
+  
+Use of submodules also allows information hiding within the scope of a module. Sibling submodules of a module cannot access the entities defined local to each other.  
+  
+Consider the following example:  
 ```fortran
-program $18pointers
+module points
+  type :: point
+     real :: x, y
+  end type point
+
+  interface
+     module function point_dist(a, b) result(distance)
+       type(point), intent(in) :: a, b
+       real :: distance
+     end function point_dist
+  end interface
+end module points
+
+submodule (points) points_a
+contains
+  module function point_dist(a, b) result(distance)
+    type(point), intent(in) :: a, b
+    real :: distance
+    distance = sqrt((a%x - b%x)**2 + (a%y - b%y)**2)
+  end function point_dist
+end submodule points_a
+```
+The repetition in the above example can be avoided by using an alternative declaration. The following example shows that it is not necessary to restate the properties of the point_dist interface.  
+```
+submodule (points) points_a
+contains
+  module procedure point_dist
+    distance = sqrt((a%x - b%x)**2 + (a%y - b%y)**2)
+  end procedure point_dist
+end submodule points_a
+```
+
+### <p align="center">```19-Pointers```</p>  
+```fortran
+program $19pointers
     implicit none
     
     integer, pointer :: ptr1, ptr2              ! Declare a pointer to an integer
@@ -827,7 +885,7 @@ program $18pointers
     ! Deallocate storage for pointer
     deallocate(ptr1)
 
-end program $18pointers
+end program $19pointers
 ```
 ```
 ptr1:5
