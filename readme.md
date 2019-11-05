@@ -893,7 +893,7 @@ ptr2:3    tar1:3
 ```
 
 ### <p align="center">```20-OOP```</p>  
-https://en.wikibooks.org/wiki/Fortran/OOP_in_Fortran#Submodule
+https://en.wikibooks.org/wiki/Fortran/OOP_in_Fortran
 
 ### <p align="center">```21-Objects in Fortran```</p>  
 ```fortran
