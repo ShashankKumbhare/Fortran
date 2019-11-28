@@ -1,0 +1,2 @@
+1. Error in the constructor of SpecBase_VariableNameList_class:
+    The 'Val' property is not getting assigned as it is supposed to.
